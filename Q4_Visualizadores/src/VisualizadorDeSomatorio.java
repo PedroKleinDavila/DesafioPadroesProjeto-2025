@@ -1,11 +1,18 @@
 import java.util.List;
 
-public class VisualizadorDeSomatorio {
+public class VisualizadorDeSomatorio implements Observer{
     private List<Integer> valores;
 
     public VisualizadorDeSomatorio(List<Integer> valores){
         this.valores = valores;
     }
+
+    @Override
+    public void atualizar(int novoValor) {
+        this.valores.add(novoValor);
+        exibeSomatorio();
+    }
+
 
     public void defineValores(List<Integer> valores){
         this.valores = valores;
