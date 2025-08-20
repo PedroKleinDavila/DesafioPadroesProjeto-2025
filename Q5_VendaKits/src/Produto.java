@@ -1,4 +1,6 @@
-public class Produto {
+
+public class Produto implements IProduto {
+
     private int id;
     private String nome;
     private double preco;
