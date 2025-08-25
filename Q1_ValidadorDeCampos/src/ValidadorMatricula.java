@@ -1,7 +1,10 @@
+
 public class ValidadorMatricula implements Validador {
-    public boolean valida(Tipo tipo, String valor) {
-        if (tipo != Tipo.MATRICULA) return false;
-        if (!valida(Tipo.INTEIRO, valor)) return false;
+
+    public boolean valida(String valor) {
+        if (!new ValidadorInteiro().valida(valor)) {
+            return false;
+        }
         int sum = 0;
         for (int i = 0; i < valor.length() - 1; i++) {
             sum += Character.getNumericValue(valor.charAt(i));

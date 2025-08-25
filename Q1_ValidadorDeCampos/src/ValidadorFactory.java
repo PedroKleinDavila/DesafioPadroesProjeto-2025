@@ -1,10 +1,16 @@
+
 public class ValidadorFactory {
-    public static Validador criarValidador(String tipo){
+
+    public static Validador criarValidador(TipoValidador tipo) {
         switch (tipo) {
-            case "email": return new ValidadorEmail();
-            case "inteiro": return new ValidadorInteiro();
-            case "matricula": return new ValidadorMatricula();
-            default: throw new IllegalArgumentException("Tipo desconhecido: " + tipo);
+            case TipoValidador.EMAIL:
+                return new ValidadorEmail();
+            case TipoValidador.INTEIRO:
+                return new ValidadorInteiro();
+            case TipoValidador.MATRICULA:
+                return new ValidadorMatricula();
+            default:
+                throw new IllegalArgumentException("Tipo desconhecido: " + tipo);
         }
     }
 }

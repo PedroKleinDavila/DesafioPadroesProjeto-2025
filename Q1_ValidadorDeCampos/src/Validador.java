@@ -1,4 +1,5 @@
-public interface Validador{
-    public enum Tipo { EMAIL, INTEIRO, MATRICULA }
-    public boolean valida(Tipo tipo,String valor);
+
+public interface Validador {
+
+    public boolean valida(String valor);
 }
