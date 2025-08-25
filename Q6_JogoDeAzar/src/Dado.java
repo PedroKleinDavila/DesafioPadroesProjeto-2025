@@ -1,7 +1,9 @@
+
 import java.util.Random;
 
-public class Dado {
-    private int lados;
+public class Dado implements IDado {
+
+    private final int lados;
     private int valorJogada;
     private final Random random;
 
@@ -10,10 +12,12 @@ public class Dado {
         this.random = new Random();
     }
 
+    @Override
     public void rolar() {
         valorJogada = random.nextInt(lados) + 1;
     }
 
+    @Override
     public int getValor() {
         return valorJogada;
     }

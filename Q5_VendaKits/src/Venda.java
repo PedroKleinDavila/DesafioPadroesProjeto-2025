@@ -1,9 +1,11 @@
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Venda {
+
     private LocalDateTime data;
     private List<ItemDeVenda> itens;
 
@@ -22,13 +24,13 @@ public class Venda {
 
     public double getTotal() {
         double total = 0.0;
-        for(ItemDeVenda item : itens){
+        for (ItemDeVenda item : itens) {
             total += item.getSubTotal();
         }
         return total;
     }
 
-    public void registrarVenda(Produto produto, int quantidade) {
+    public void registrarVenda(IProduto produto, int quantidade) {
         ItemDeVenda item = new ItemDeVenda(produto, quantidade);
         itens.add(item);
     }
