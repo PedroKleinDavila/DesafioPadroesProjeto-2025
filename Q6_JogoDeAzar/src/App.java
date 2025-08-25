@@ -8,6 +8,10 @@ public class App {
         d6.rolar();
         d20.rolar();
         d6Histórico.rolar();
+        System.out.println("D6: " + d6Histórico.getValor());
+        d6Histórico.rolar();
+        System.out.println("D6: " + d6Histórico.getValor());
+        d6Histórico.rolar();
         System.out.println("D6: " + d6.getValor());
         System.out.println("D20: " + d20.getValor());
         System.out.println("D6: " + d6Histórico.getValor());

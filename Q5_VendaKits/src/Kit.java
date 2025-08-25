@@ -6,12 +6,12 @@ public class Kit implements IProduto {
 
     private int id;
     private String nome;
-    private List<Produto> _produtos = new ArrayList<>();
+    private List<IProduto> _produtos = new ArrayList<>();
 
-    public Kit(int id, String nome, List<Produto> produtos) {
+    public Kit(int id, String nome, List<IProduto> produtos) {
         this.id = id;
         this.nome = nome;
-        _produtos = produtos;
+        this._produtos = new ArrayList<>(produtos);
     }
 
     public void addProduto(Produto produto) {
@@ -31,7 +31,7 @@ public class Kit implements IProduto {
     @Override
     public double getPreco() {
         double total = 0;
-        for (IProduto p : _produtos) {
+        for (IProduto p : this._produtos) {
             total += p.getPreco();
         }
         return total;

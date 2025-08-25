@@ -1,9 +1,6 @@
 
 public class Codificador {
 
-    public enum Tipo {
-        SIMPLES, DESLOCA
-    };
     public ICodificadorStrategy _codificador;
 
     public Codificador(ICodificadorStrategy codificador) {

@@ -5,10 +5,9 @@ public class App {
 
     public static void main(String[] args) {
         VendasFachada proc = new VendasEmMemoria();
-        List<Produto> produtos = proc.buscarProdutos();
-        Kit kit = new Kit(123456, "meuKit", produtos);
+        List<IProduto> produtos = proc.buscarProdutos();
         Venda venda = proc.iniciarVenda();
-        proc.registrarVenda(venda, kit.getId(), 1);
+        proc.registrarVenda(venda, produtos.get(3).getId(), 2);
         System.out.println(proc.emitirComprovante(venda));
     }
 }
